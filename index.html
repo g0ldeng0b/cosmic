@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Age Calculator, Zodiac & Compatibility — Interactive + SEO</title>
+<meta name="description" content="Enter your birthdate to see your age, days alive, next birthday, zodiac & daily blurb. Browse 500+ SEO pages for signs, compatibility, and famous birthdays.">
+
+<style>
+:root{--bg:#0b1220;--text:#e5e7eb;--muted:#94a3b8;--ring:#1f2a44;--accent:#22d3ee}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial;color:var(--text);
+     background: radial-gradient(ellipse at bottom,#0d1b2a 0%,#0b1220 100%);overflow-x:hidden;
+     padding-bottom:max(16px, env(safe-area-inset-bottom));}
+body::before{content:"";position:fixed;inset:0;z-index:0;background-image:
+  radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.9), transparent),
+  radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,.6), transparent),
+  radial-gradient(2px 2px at 60% 70%, rgba(255,255,255,.5), transparent),
+  radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.7), transparent),
+  radial-gradient(2px 2px at 70% 50%, rgba(255,255,255,.55), transparent),
+  radial-gradient(3px 3px at 10% 60%, rgba(34,211,238,.25), transparent),
+  radial-gradient(4px 4px at 85% 75%, rgba(147,197,253,.2), transparent);
+  background-size:220px 220px;animation:twinkle 12s linear infinite}
+@keyframes twinkle{0%,100%{opacity:.7}50%{opacity:1}}
+header{padding:calc(28px + env(safe-area-inset-top)) 16px 10px;text-align:center;position:relative;z-index:1}
+header h1{margin:0;font-size:28px;text-shadow:0 0 16px rgba(34,211,238,.12)}
+header p{margin:6px 0 0;color:var(--muted)}
+main{max-width:1000px;margin:20px auto 80px;padding:0 16px;position:relative;z-index:1}
+.card{background:linear-gradient(180deg, rgba(14,22,39,.9), rgba(10,18,33,.9));border:1px solid var(--ring);border-radius:18px;padding:16px;box-shadow:0 8px 26px rgba(0,0,0,.35), 0 0 24px rgba(34,211,238,.05)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.metric{padding:12px;border-radius:12px;border:1px dashed #2a3a63;background:#0a1120}
+label{display:block;margin:10px 0 6px;color:#cbd5e1}
+input[type=date],select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #27324f;background:#0b1324;color:var(--text)}
+input[type=date]:focus,select:focus{outline:2px solid var(--accent)}
+.btn,a.btn{display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #22416e;background:linear-gradient(180deg,#0e1b31,#0c1424);color:#e6f1ff;text-decoration:none}
+ul.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;list-style:none;padding:0}
+ul.signs li a{display:block;padding:10px 12px;border:1px solid #24314f;border-radius:12px;color:#e6f1ff;text-decoration:none}
+small.badge{display:inline-block;margin-left:8px;padding:2px 6px;border:1px solid #31517c;border-radius:999px;background:#0c1a31;color:#bfeafe;font-size:12px}
+.muted{color:#94a3b8}
+</style>
+
+</head>
+<body>
+<header>
+  <h1>Age Calculator & Zodiac Hub</h1>
+  <p class="muted">Interactive tool + SEO library: signs, compatibility, and famous birthdays.</p>
+</header>
+<main>
+  <section class="card">
+    <h2>Your Details</h2>
+    <div class="row">
+      <div><label for="dob">Date of birth</label><input id="dob" type="date"></div>
+    </div>
+    <div class="row" style="margin-top:12px"><button id="calc" class="btn">Calculate</button><span id="status" class="muted"></span></div>
+    <div class="grid" id="results" hidden>
+      <div class="metric"><b>👤 Age</b><div class="val" id="ageYears">—</div></div>
+      <div class="metric"><b>⏳ Days alive</b><div class="val" id="daysAlive">—</div></div>
+      <div class="metric"><b>🎂 Days until next birthday</b><div class="val" id="daysToBday">—</div></div>
+      <div class="metric"><b id="zodHead">♈ Zodiac sign</b><div class="val" id="zodiac">—</div></div>
+    </div>
+    <div class="metric" id="dailyBox" hidden>
+      <h3 id="dailyTitle">Today's Horoscope</h3>
+      <p id="dailyText" class="muted">—</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Explore Signs</h2>
+    <ul class="signs"><li><a href="sign/aries.html">Aries ♈</a></li>
+<li><a href="sign/taurus.html">Taurus ♉</a></li>
+<li><a href="sign/gemini.html">Gemini ♊</a></li>
+<li><a href="sign/cancer.html">Cancer ♋</a></li>
+<li><a href="sign/leo.html">Leo ♌</a></li>
+<li><a href="sign/virgo.html">Virgo ♍</a></li>
+<li><a href="sign/libra.html">Libra ♎</a></li>
+<li><a href="sign/scorpio.html">Scorpio ♏</a></li>
+<li><a href="sign/sagittarius.html">Sagittarius ♐</a></li>
+<li><a href="sign/capricorn.html">Capricorn ♑</a></li>
+<li><a href="sign/aquarius.html">Aquarius ♒</a></li>
+<li><a href="sign/pisces.html">Pisces ♓</a></li></ul>
+  </section>
+
+  <section class="card">
+    <h2>Popular Compatibility</h2>
+    <ul><li><a href="compatibility/leo-scorpio.html">Leo ♌ + Scorpio ♏</a></li>
+<li><a href="compatibility/cancer-taurus.html">Taurus ♉ + Cancer ♋</a></li>
+<li><a href="compatibility/aries-taurus.html">Aries ♈ + Taurus ♉</a></li>
+<li><a href="compatibility/pisces-virgo.html">Virgo ♍ + Pisces ♓</a></li></ul>
+  </section>
+
+  <section class="card">
+    <h2>Famous Birthdays by Date <small class="badge">366 pages</small></h2>
+    <p class="muted">Open a date page to see lists (auto-filled on host): <a class="btn" href="birthday/09-05.html">September 5</a></p>
+  </section>
+
+  <section class="card">
+    <h2>Fun Facts</h2>
+    <div class="grid" id="funFacts" hidden>
+      <div class="metric"><b>📅 Day of the week</b><div class="val" id="ffWeekday">—</div></div>
+      <div class="metric"><b>🎤 Famous birthdays</b><ul id="ffBirthdays" class="muted" style="margin:6px 0 0; padding-left:18px"></ul></div>
+      <div class="metric"><b>📜 Historical events</b><ul id="ffEvents" class="muted" style="margin:6px 0 0; padding-left:18px"></ul></div>
+    </div>
+    <p class="muted" id="ffNote" hidden>Built‑in demo facts for a few dates so it works offline. Hosted version can load more.</p>
+  </section>
+</main>
+
+<script>
+var TITLE = {"aries": "Aries", "taurus": "Taurus", "gemini": "Gemini", "cancer": "Cancer", "leo": "Leo", "virgo": "Virgo", "libra": "Libra", "scorpio": "Scorpio", "sagittarius": "Sagittarius", "capricorn": "Capricorn", "aquarius": "Aquarius", "pisces": "Pisces"};
+var SYMBOL = {"aries": "\u2648", "taurus": "\u2649", "gemini": "\u264a", "cancer": "\u264b", "leo": "\u264c", "virgo": "\u264d", "libra": "\u264e", "scorpio": "\u264f", "sagittarius": "\u2650", "capricorn": "\u2651", "aquarius": "\u2652", "pisces": "\u2653"};
+var DAILY = {"Aries": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Taurus": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Gemini": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Cancer": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Leo": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Virgo": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Libra": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Scorpio": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Sagittarius": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Capricorn": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Aquarius": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."], "Pisces": ["Lead with calm focus.", "Ask a clear question.", "Tiny progress beats waiting.", "Share one idea today.", "Tidy a corner; clarity follows.", "Take a short walk; reset.", "Clarity comes from action."]};
+var FUN = {"01-01": {"birthdays": [{"name": "J. Edgar Hoover", "role": "first FBI Director", "year": 1895}, {"name": "Betsy Ross", "role": "flag maker", "year": 1752}], "events": [{"year": 1959, "text": "Cuban Revolution: Fulgencio Batista flees Cuba."}]}, "09-05": {"birthdays": [{"name": "Freddie Mercury", "role": "singer (Queen)", "year": 1946}, {"name": "Michael Keaton", "role": "actor", "year": 1951}], "events": [{"year": 1977, "text": "Voyager 1 launches to explore the outer Solar System."}]}, "12-25": {"birthdays": [{"name": "Humphrey Bogart", "role": "actor", "year": 1899}, {"name": "Annie Lennox", "role": "singer", "year": 1954}], "events": [{"year": 800, "text": "Charlemagne crowned Holy Roman Emperor."}]}};
+
+function toMid(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+function daysBetween(a,b){ var MS=86400000; return Math.floor((Date.UTC(b.getFullYear(),b.getMonth(),b.getDate()) - Date.UTC(a.getFullYear(),a.getMonth(),a.getDate()))/MS); }
+function isLeapYear(y){ return (y%4===0 && y%100!==0) || (y%400===0); }
+function zodiacFrom(date){
+  var m=date.getMonth()+1, d=date.getDate();
+  if((m===3&&d>=21)||(m===4&&d<=19)) return "aries";
+  if((m===4&&d>=20)||(m===5&&d<=20)) return "taurus";
+  if((m===5&&d>=21)||(m===6&&d<=20)) return "gemini";
+  if((m===6&&d>=21)||(m===7&&d<=22)) return "cancer";
+  if((m===7&&d>=23)||(m===8&&d<=22)) return "leo";
+  if((m===8&&d>=23)||(m===9&&d<=22)) return "virgo";
+  if((m===9&&d>=23)||(m===10&&d<=22)) return "libra";
+  if((m===10&&d>=23)||(m===11&&d<=21)) return "scorpio";
+  if((m===11&&d>=22)||(m===12&&d<=21)) return "sagittarius";
+  if((m===12&&d>=22)||(m===1&&d<=19)) return "capricorn";
+  if((m===1&&d>=20)||(m===2&&d<=18)) return "aquarius";
+  return "pisces";
+}
+function dailyFor(title){
+  var lines = DAILY[title]||["Have a steady, simple day."];
+  var t = new Date(); var ymd = t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,'0')+"-"+String(t.getDate()).padStart(2,'0');
+  var seed = title+"|"+ymd, h=0; for(var i=0;i<seed.length;i++){ h=((h<<5)-h)+seed.charCodeAt(i); h|=0; }
+  if(h<0) h=-h; var idx=h%lines.length; return {text: lines[idx], date: ymd};
+}
+function weekdayName(d){ return ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][d.getDay()]; }
+function mdKey(d){ return String(d.getMonth()+1).padStart(2,'0') + "-" + String(d.getDate()).padStart(2,'0'); }
+
+(function(){
+  var dob = document.getElementById('dob');
+  var results = document.getElementById('results');
+  var outYears = document.getElementById('ageYears');
+  var outAlive = document.getElementById('daysAlive');
+  var outTo = document.getElementById('daysToBday');
+  var outZ = document.getElementById('zodiac');
+  var zHead = document.getElementById('zodHead');
+  var box = document.getElementById('dailyBox');
+  var dTitle = document.getElementById('dailyTitle');
+  var dText = document.getElementById('dailyText');
+  var status = document.getElementById('status');
+
+  var ffWrap = document.getElementById('funFacts');
+  var ffNote = document.getElementById('ffNote');
+  var wk = document.getElementById('ffWeekday');
+  var ulB = document.getElementById('ffBirthdays');
+  var ulE = document.getElementById('ffEvents');
+
+  document.getElementById('calc').addEventListener('click', function(){
+    status.textContent="";
+    if(!dob.value){ status.textContent="Please select your birth date."; results.hidden=true; box.hidden=true; ffWrap.hidden=true; return; }
+    var d = new Date(dob.value+"T00:00:00"); if(isNaN(d)){ status.textContent="Invalid date."; return; }
+    var today = toMid(new Date());
+    var diff = daysBetween(toMid(d), today); if(diff<0){ status.textContent="Date is in the future."; return; }
+    var years = today.getFullYear() - d.getFullYear() - ((today.getMonth()<d.getMonth() || (today.getMonth()===d.getMonth() && today.getDate()<d.getDate()))?1:0);
+    var y=today.getFullYear(), m=d.getMonth(), day=d.getDate();
+    var nextB = (m===1 && day===29) ? (function(){ var dd=isLeapYear(y)?29:28; var c=new Date(y,1,dd); if(daysBetween(today,toMid(c))<0){ y+=1; dd=isLeapYear(y)?29:28; c=new Date(y,1,dd);} return c; })() : (function(){ var c=new Date(y,m,day); if(daysBetween(today,toMid(c))<0) c=new Date(y+1,m,day); return c; })();
+    var daysTo = daysBetween(today, toMid(nextB));
+    var z = zodiacFrom(d); var title = TITLE[z]; var sym = SYMBOL[z];
+
+    outYears.textContent = years + " years";
+    outAlive.textContent = diff.toLocaleString(undefined) + " days";
+    outTo.textContent = daysTo + " days";
+    outZ.textContent = sym + " " + title;
+    zHead.innerHTML = sym + " Zodiac sign";
+    results.hidden = false;
+
+    var daily = dailyFor(title);
+    dTitle.textContent = "Today's Horoscope for " + title + " — " + new Date().toLocaleDateString();
+    dText.textContent = daily.text;
+    box.hidden = false;
+
+    wk.textContent = weekdayName(d);
+    var rec = FUN[mdKey(d)] || null;
+    ulB.innerHTML = ""; ulE.innerHTML = "";
+    if(rec){
+      (rec.birthdays||[]).forEach(function(b){ var li=document.createElement('li'); li.textContent = (b.name||'') + (b.year? " ("+b.year+")": "") + (b.role? " — "+b.role:""); ulB.appendChild(li); });
+      (rec.events||[]).forEach(function(ev){ var li=document.createElement('li'); li.textContent = (ev.year? ev.year+": ":"") + (ev.text||''); ulE.appendChild(li); });
+      ffNote.hidden = false;
+    } else {
+      ulB.innerHTML = "<li>— Add more dates when hosted</li>"; ulE.innerHTML = "<li>— Add more dates when hosted</li>"; ffNote.hidden = false;
+    }
+    ffWrap.hidden = false;
+  });
+})();
+</script>
+</body>
+</html>
